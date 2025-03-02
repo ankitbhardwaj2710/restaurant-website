@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header class="sticky-header">
+        <nav>
+            <h1>Foodie's Delight</h1>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="dish1.jpg" alt="Dish 1">
+                <h3>Delicious Pasta</h3>
+                <p>$12.99</p>
+            </div>
+            <div class="menu-item">
+                <img src="dish2.jpg" alt="Dish 2">
+                <h3>Grilled Chicken</h3>
+                <p>$15.99</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="order">
+        <h2>Place Your Order</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <select>
+                <option>Select Dish</option>
+                <option>Pasta</option>
+                <option>Grilled Chicken</option>
+            </select>
+            <button type="submit">Order Now</button>
+        </form>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</body>
+</html>
