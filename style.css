@@ -43,13 +43,14 @@
     font-family: 'Ubuntu Mono', monospace;
     margin-top: 10px;
     border: 2px solid black;
-    border-radius: 15px;
+    border-radius: 100px;
 }
 
 /*Navbar content functionality*/
 #navcontent {
     display: flex;
     justify-content: center;
+    
 }
 
 /*Navbar content styling*/
@@ -84,7 +85,7 @@ ul li a:hover {
 /*Setting the background image using before pseudo selector*/
 #container1::before {
     content: '';
-    background: url("https://media.geeksforgeeks.org/wp-content/uploads/20240711124309/8513909_3941598-(2).jpg") no-repeat center center/cover;
+    background: url("background.jpg") no-repeat center center/cover;
     width: 100vw;
     height: 59vh;
     position: absolute;
@@ -96,23 +97,26 @@ ul li a:hover {
     z-index: -1;
     opacity: 0.89;
     border: 2px solid black;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
     border-bottom-left-radius: 100px;
 }
 
 #row1 {
-    color: black;
+    color: rgb(24, 25, 24);
     font-weight: bold;
     font-size: 2rem;
-    text-align: center;
+    text-align: justify;
     margin-top: 35px;
 }
 
 /*Button Styling*/
-.btn {
+ a{
     margin-top: 15px;
-    border: 3px solid white;
+    border: 3px solid black;
     border-radius: 15px;
-    background-color: yellow;
+    background-color: rgb(162, 19, 83);
     font-size: 20px;
     font-weight: bold;
     font-family: 'Ubuntu Mono', monospace;
@@ -232,9 +236,9 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    position: fixed;
     width: 100%;
     bottom: 0;
+    position: fixed;
 }
 
 /*Designing of Contact Us*/
