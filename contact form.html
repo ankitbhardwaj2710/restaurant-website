@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContactUs</title>
+    <script>
+       function generateCaptcha() {
+    let num1 = Math.floor(Math.random() * 10);
+    let num2 = Math.floor(Math.random() * 10);
+    document.getElementById("captchaQuestion").innerText = num1 + " + " + num2 + " = ?";
+    document.getElementById("captchaAnswer").value = num1 + num2;
+}
+
+function validateCaptcha() {
+    let userAnswer = document.getElementById("captchaInput").value;
+    let correctAnswer = document.getElementById("captchaAnswer").value;
+    if (userAnswer != correctAnswer) {
+        alert("Incorrect CAPTCHA. Please try again.");
+        return false;
+    }
+    return true;
+}
+
+function sendToWhatsApp() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("pho").value;
+    let message = document.getElementById("message").value;
+    
+    let whatsappUrl = `https://wa.me/8307945579?text=Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AMessage: ${message}`;
+    window.open(whatsappUrl, "_blank");
+}
+
+document.addEventListener("DOMContentLoaded", generateCaptcha);
+
+    </script>
+</head>
+<body onload="generateCaptcha()">
+    <div id="ContactUs">
+        <h1>Contact Us</h1>
+        <form action="#" onsubmit="return validateCaptcha()">
+            <div class="form-shape">
+                <label for="query">Type of Query</label>
+                <select name="myQuery" id="query">
+                    <option value="sel" selected>Select</option>
+                    <option value="ord">Order related Issues</option>
+                    <option value="Site">Site related Issues</option>
+                    <option value="fed">Complaint related Issues</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            <div class="form-shape">
+                <label for="name">Name</label>
+                <input type="text" name="myName" id="name" placeholder="Enter your Name" required>
+            </div>
+            <div class="form-shape">
+                <label for="email">Email-Id</label>
+                <input type="email" name="myEmail" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-shape">
+                <label for="pho">Phone Number</label>
+                <input type="phone" name="myPhone" id="pho" placeholder="Enter your Phone no" required>
+            </div>
+            <div class="form-shape">
+                <label for="message">Elaborate your query</label>
+                <textarea name="mesg" id="message" cols="30" rows="5" required></textarea>
+            </div>
+            <div class="form-shape">
+                <p id="captchaQuestion"></p>
+                <input type="number" id="captchaInput" placeholder="Enter CAPTCHA" required>
+                <input type="hidden" id="captchaAnswer">
+            </div>
+            
+            <input type="reset" value="Reset">
+        </form>
+        <button onclick="sendToWhatsApp()">Send via WhatsApp</button>
+    </div>
+</body>
+</html>
